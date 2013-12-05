@@ -1,0 +1,594 @@
+FORMAT: 1A
+HOST: http://ci.emte.xaton.com/api/v1/
+
+# EMTE REST API
+EMTE API is a *REST* based service provinding information fot the EMTE mobile apps.
+
+# User [/model/user]
++ Model (application/json)
+    + Body
+
+            {
+                "id": 181901,
+                "email": "test@kalapun.com",
+                "key": "845gh-834ghr-384uh-3847hf",
+                "firstName": "Taras",
+                "lastName": "Kalapun",
+                "address": {
+                    "city": "Amsterdam",
+                    "street": "Barbara",
+                    "number": "13",
+                    "postCode": "1077DA"
+                }
+            }
+
+
+# Merchants [/model/merchants]
++ Model (application/json)
+    + Body
+
+            {
+            "totalResults": "2",
+            "results": [
+                {
+                    "id": "42",
+                    "externalId": "12",
+                    "name": "B&B",
+                    "description": "Broodjes and more",
+                    "address": {
+                        "id": "addressID1",
+                        "city": "Amsterdam",
+                        "street": "Barbara",
+                        "number": "13",
+                        "postCode": "1077DA",
+                        "location": "52.373713,4.86586"
+                    },
+                    "website": "http://www.mobiquityinc.com",
+                    "phoneNumber": "+31614012010",
+                    "type": "food",
+                    "medias": [
+                        {
+                        "id": 100366,
+                        "url": "/shop/asset/SKU3673_primary_026059.png",
+                        "name": ""
+                        }
+                    ],
+                    "defaultMedia": {
+                        "id": 100366,
+                        "url": "/shop/asset/SKU3673_primary_026059.png",
+                        "name": ""
+                    },
+                    "extraInfo": {
+                        "preOrderMessage": "Message to display before pruchasing",
+                        "postOrderMessage": "Message to display after pruchasing",
+                        "isOpen": true,
+                        "orderPostalCode": "1020AD",
+                        "nationWide": true,
+                        "minimumPrice": 10,
+                        "checkingCount": 10
+                    },
+                    "categories": null,
+                    "numberOfProductsOnSale": 4,
+                    
+                },
+                {
+                    "id": "60",
+                    "externalId": "21",
+                    "name": "Vapiano",
+                    "description": "Italian food",
+                    "address": {
+                        "id": "addressID2",
+                        "city": "Amsterdam",
+                        "street": "Barbara",
+                        "number": "13",
+                        "postCode": "1077DA",
+                        "location": "52.293713,4.76586"
+                    },
+                    "website": "http://www.mobiquityinc.com",
+                    "phoneNumber": "+31614012010",
+                    "type": "food",
+                    "medias": [
+                        {
+                        "id": 100366,
+                        "url": "/shop/asset/SKU3673_primary_026059.png",
+                        "name": ""
+                        }
+                    ],
+                    "defaultMedia": {
+                        "id": 100366,
+                        "url": "/shop/asset/SKU3673_primary_026059.png",
+                        "name": ""
+                    },
+                    "extraInfo": {
+                        "preOrderMessage": "Message to display before pruchasing",
+                        "postOrderMessage": "Message to display after pruchasing",
+                        "isOpen": true,
+                        "orderPostalCode": "1020AD",
+                        "nationWide": true,
+                        "minimumPrice": 10,
+                        "checkingCount": 10
+                    },
+                    "categories": null,
+                    "numberOfProductsOnSale": 0
+                }
+            ]}
+            
+# Merchant [/model/merchant]
++ Model (application/json)
+    + Body
+
+            {
+                "id": "42",
+                "externalId": "12",
+                "name": "B&B",
+                "description": "Broodjes and more",
+                "address": {
+                    "id": "addressID1",
+                    "city": "Amsterdam",
+                    "street": "Barbara",
+                    "number": "13",
+                    "postCode": "1077DA",
+                    "location": "52.373713,4.86586"
+                },
+                "website": "http://www.mobiquityinc.com",
+                "phoneNumber": "+31614012010",
+                "type": "cinema",
+                "medias": [
+                    {
+                    "id": 100366,
+                    "url": "/shop/asset/SKU3673_primary_026059.png",
+                    "name": ""
+                    }
+                ],
+                "defaultMedia": {
+                    "id": 100366,
+                    "url": "/shop/asset/SKU3673_primary_026059.png",
+                    "name": ""
+                },
+                "extraInfo": {
+                    "preOrderMessage": "Message to display before pruchasing",
+                    "postOrderMessage": "Message to display after pruchasing",
+                    "isOpen": true,
+                    "orderPostalCode": "1020AD",
+                    "nationWide": true,
+                    "minimumPrice": 10,
+                    "checkingCount": 10
+                }
+                "categories": null,
+                "numberOfProductsOnSale": 4,
+                "fulFillmentMethods": []
+                
+            }
+
+# Category [/model/category]
++ Model (application/json)
+    + Body
+    
+            {
+            "parentId": "1",
+            "numberOfProducts": 0,
+            "numberOfProductsOnSale": 6,
+            "totalProducts": 4314,
+            "active": true,
+            "id": 2,
+            "name": "Producten",
+            "description": "Producten",
+            "url": "/producten",
+            "activeStartDate": 1380722389000,
+            "subcategories": [
+                {
+                    "parentId": "2",
+                    "medias": [
+                        {
+                            "id": 100001,
+                            "title": "Aardappel, pasta, rijst",
+                            "url": "/asset/CAT3618_primary_022157.png",
+                            "altText": "primary"
+                        }
+                    ],
+                    "numberOfProducts": 0,
+                    "numberOfProductsOnSale": 1,
+                    "totalProducts": 123,
+                    "active": true,
+                    "id": 10001,
+                    "name": "Aardappel, pasta, rijst",
+                    "description": "Aardappel, pasta, rijst",
+                    "url": "/producten/Aardappel, pasta, rijst",
+                    "activeStartDate": 1361273771000
+                }
+            ]
+            }
+            
+
+# Product [/model/product]
++ Model (application/json)
+    + Body
+
+            {
+                "id": "42",
+                "externalId": "1012",
+                "categoryId": "2",
+                "merchantId": 1,
+                "defaultMedia": {
+                    "id": 102472,
+                    "url": "/shop/asset/SKU840_primary_026867.png",
+                    "name": ""
+                },
+                "medias": [{
+                    "id": 102472,
+                    "url": "/shop/asset/SKU840_primary_026867.png",
+                    "name": ""
+                }],
+                "active": true,
+                "name": "Schwarzkopf taft ultra strong gellac",
+                "shortName": "Schwarzkopf",
+                "description": "Lore impsum",
+                "defaultSku": {
+                    "id": 3779,
+                    "name": "Schwarzkopf taft ultra strong gellac",
+                    "retailPrice": 3.35,
+                    "retailCurrency": "EUR",
+                    "salePrice": 3.35,
+                    "saleCurrency": "EUR"
+                },
+                "skus": [{
+                    "id": 3779,
+                    "name": "Schwarzkopf taft ultra strong gellac",
+                    "retailPrice": 3.35,
+                    "retailCurrency": "EUR",
+                    "salePrice": 3.35,
+                    "saleCurrency": "EUR",
+                }],
+                "infoFields": [
+                    "field1",
+                    "field2"
+                ],
+                "extraInfo": {
+                    "barcode": null,
+                    "allowExport": true,
+                    "endTime": null
+                }
+            }
+
+# Products [/model/products]
++ Model (application/json)
+    + Body
+
+            [{
+                "id": "42",
+                "externalId": "1012",
+                "categoryId": "2",
+                "merchantId": 1,
+                "defaultMedia": {
+                    "id": 102472,
+                    "url": "/shop/asset/SKU840_primary_026867.png",
+                    "name": ""
+                },
+                "medias": [{
+                    "id": 102472,
+                    "url": "/shop/asset/SKU840_primary_026867.png",
+                    "name": ""
+                }],
+                "active": true,
+                "name": "Schwarzkopf taft ultra strong gellac",
+                "shortName": "Schwarzkopf",
+                "description": "Lore impsum",
+                "defaultSku": {
+                    "id": 3779,
+                    "name": "Schwarzkopf taft ultra strong gellac",
+                    "retailPrice": 3.35,
+                    "retailCurrency": "EUR",
+                    "salePrice": 3.35,
+                    "saleCurrency": "EUR"
+                },
+                "skus": [{
+                    "id": 3779,
+                    "name": "Schwarzkopf taft ultra strong gellac",
+                    "retailPrice": 3.35,
+                    "retailCurrency": "EUR",
+                    "salePrice": 3.35,
+                    "saleCurrency": "EUR",
+                }],
+                "infoFields": [
+                    "field1",
+                    "field2"
+                ],
+                "extraInfo": {
+                    "barcode": null,
+                    "allowExport": true,
+                    "endTime": null
+                }
+            }]
+
+# Order [/model/order]
++ Model (application/json)
+    + Body
+
+            {
+                "id": "42",
+            }
+
+
+
+
+# Group Auth
+Authorization calls
+
+## GET /auth/login?{email}{password}
+Logs in a user and retrieves a new token. 
+If no email/password provided then an Anonymous session will be created
+
+- Non anonymous user can be implemented with command 93
+
++ Parameters
+    + email (optional, string, `test@kalapun.com`) ... String indicating the user email
+    + password (optional, string, `Q1w2e3`) ... String indicating the user password
+    
++ Response 200 (application/json)
+    [User][]
+
+## GET /auth/logout
+Logs the user out
+
++ Response 200
+
+
+## POST /auth/user
+Updates the user information
+
++ Request (application/json)
+    [User][]
+
++ Response 200 (application/json)
+    [User][]
+
+
+## POST /auth/register
+Register a new user in the system.
+
+- Handled by /auth/register/step1
+
++ Response 200
+
+## POST /auth/register/step1?{email}{password}
+Register a new user in the system. Step1
+
++ Parameters
+    + email (optional, string, `test@kalapun.com`) ... String indicating the user email
+    + password (optional, string, `Q1w2e3`) ... String indicating the user password
+
++ Response 200
+
+## POST /auth/password?{oldPassword}{newPassword}
+Register a new user in the system.
+
+- Already handled by MyOrder SDK. Maybe Phase 2?
+
++ Parameters
+    + oldPassword (required, string, `Q1w2e3`) ... String indicating the old user password
+    + newPassword (required, string, `W2e3r4`) ... String indicating the new user password to set
+    
++ Response 200
+
+
+
+# Group Catalog Categories
+
+## GET /catalog/category/
+Get root Category. 
+
++ Response 200 (application/json)
+    [Category][]
+
+
+## GET /catalog/category/?{categoryId}{showOffers}{offersLimit}
+Get Category with it's subcategories. 
+
+- If `categoryId` not provided, will return the root
+
++ Parameters
+    + categoryId (required, number, `1`) ... Numeric `id` of the Category.
+    + showOffers (optional, string, `true`) ... Weather to show the offers.
+    + offersLimit (optional, number, `100`) ... Number of offers.
+
+
++ Response 200 (application/json)
+    [Category][]
+
+
+# Group Products
+
+## GET /catalog/products?{categoryIds}{available}{term}
+Search products based on merchant, category or terms
+
+- There is no command to build this endpoint without the merchantId
+- Check Category for details on how to build this endpoint.
+- Term does not exist, implement filtering in proxy
+
++ Parameters
+    + categoryId (required, string, `1`) ... Array of category `id` s separated by `,`.
+    + available (required, string, `yes`) ... Show only available products.
+    + term (optional, string, `Kip`) ... String with a search term to filter products.
+
++ Response 200 (application/json)
+
+        [Products][]
+        
+## GET /catalog/product/{id}
+Retrieve a product detail
+
+- Not sure how to build this endpoint yet (no merchant provided)
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Product.
++ Response 200 (application/json)
+    [Product][]
+
+
+
+
+
+
+# Group Cities
+## GET /catalog/cities?{location}{type}{term}
+Retrieve all cities based on a location, type of merchants or search term
+
+- Implement with command 78.
+
++ Parameters
+    + location (optional, string, `41.6;1.45`) ... String with the location of cities to retrieve
+    + type (optional, string, `flowers,cinemas`) ... String with the kind merchants we look for in the cities, separated by commas. Cities with no merchan in this types will not be returned
+    + term (optional, string, `Amsterdam`) ... String with a search term to use in city filtering
+
++ Response 200 (application/json)
+
+        [{
+          "id": 1,
+          "name": "Amsterdam
+        }, {
+          "id": 2
+          "name": "Groningen"
+        }]
+
+
+
+
+
+# Group Cart Remote
+Cart calls could potentially be delayed to Phase 2. Current app stores cart locally.
+
+## GET /cart?{includeProducts}
+Retrieve the current user shopping cart. A user can be anonymous but requires a session token
+
+- No call exists in MyOrder at this moment. How to implement it?
+
++ Parameters
+    + includeProducts (optional, boolean, `true`) ... Bool indicating whether the returned order should include the products in the items
+    
++ Response 200 (application/json)
+    [Order][]
+
+## POST /cart
+
+Deletes the shopping cart and creates a new one from scratch
+
+- No call exists in MyOrder at this moment. How to implement it?
+
++ Response 200 (application/json)
+    [Order][]
+
+
+## POST /cart/{productId}?{skuId}{quantity}
+Adds a new product to the shopping cart
+
+- No call exists in MyOrder at this moment. How to implement it?
+
++ Parameters
+    + productId (required, number, `1`) ... Number indicating the product to be added.
+    + skuId (optional, number, `1`) ... Number indicating the `id` of the specific SKU to add. Defaults to default SKU from product.
+    + quantity (optional, number, `1`) ... Number indicating the amount of items to add. Defaults to 1
+    
++ Response 200 (application/json)
+    [Order][]
+
+## PUT /cart/{itemId}?{quantity}
+Updates the quantity for a shopping cart item
+
+- No call exists in MyOrder at this moment. How to implement it?
+
++ Parameters
+    + itemId (required, number, `1`) ... Number indicating the order item to be updated.
+    + quantity (required, number, `1`) ... Number indicating the amount of items to be set
+    
++ Response 200 (application/json)
+    [Order][]
+
+## DELETE /cart/{itemId}
+Deletes an item from the shopping cart
+
+- No call exists in MyOrder at this moment. How to implement it?
+
++ Parameters
+    + itemId (required, number, `1`) ... Number indicating the order item to be deleted.
+
++ Response 200 (application/json)
+    [Order][]
+
+## Cart Checkout [/cart/checkout]
+Makes a checkout of the shopping cart
+
+- No call exists in MyOrder at this moment. How to implement it?
+
++ Response 200 (application/json)
+    [Order][]
+
+
+
+# Group Cart Local
+Instead of providing the full cart funtionality, we could keep it locally and just call the order confirmation when the payment sdk completes a payment.
+
+## POST  [/cart/checkout/complete]
+Confirms a checkout of a local cart
+
+- This request needs to be reviewed. It will take a purchased order with the payment info and confirm it. The order info could be taken from the user purchase history instead of passing all information again
+- Implement it with command 51 for generic merchants, and 1111 and 1112 for ThuisAfgehaald
+
++ Response 200
+
+
+# Group Orders
+Order calls could potentially be delayed to Phase 2. Most of them are already implemented in MyOrder SDK.
+
+## GET /orders?{includeItems}{includeProducts}{fromDate}{toDate}
+Retrieve user's orders. Requieres login.
+
+- Currently provided by the MyOrderSDK. Probably delayed to Phase 2 of BL integration
+
++ Parameters
+    + includeItems (optional, boolean, `true`) ... Bool indicating whether the orders should include the items. Defaults to true.
+    + includeProducts (optional, boolean, `true`) ... Bool indicating whether the order items should include the product info. Defaults to false.
+    + fromDate (optional, string, `2013-08-12`) ... String indicating the minimium date of the orders
+    + toDate (optional, string, `2013-08-12`) ... String indicating the maximum date of the orders
+
++ Response 200 (application/json)
+
+        [[Order][]]
+
+## GET /order/{id}?{includeProducts}
+Retrieve an order detail
+
+- Currently provided by the MyOrderSDK. Probably delayed to Phase 2 of BL integration
+
++ Parameters
+    + id (required, number, `1`) ... Number with the order `id` to fetch.
+    + includeProducts (optional, boolean, `true`) ... Bool indicating whether the order items should include the product info. Defaults to false.
+    
++ Response 200 (application/json)
+    [Order][]
+
+
+
+
+# Group MyOrder SDK APIs
+The following APIs are not in the MyOrder SDK but should be added:
+
+- Autoreloading and Manual reload for MiniTix (903 and 1001)
+- Credit card info (183)
+- Verify Order (55)
+- P2P payment (1081)
+- Slim betalen (1041)
+
+
+# Group Other APIs
+Some other APIs are not added yet to any module:
+
+- User's favorites (77)
+- Merchant news (805)
+- Merchant group (614)
+- Push service (1051)
+- Global configuration: Tickets (272), social (610), api version (65)
+- Passbook (1043, 1044, 1046, 1047)
+- Price Models not considered properly yet
+- White label apps not considered properly yet
+
+
