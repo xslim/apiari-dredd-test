@@ -359,10 +359,18 @@ Register a new user in the system. Step1
 
 + Response 200
 
-## POST /auth/password?{oldPassword}{newPassword}
-Register a new user in the system.
+## POST /auth/forgot?{email}
+Forgot password thing.
 
-- Already handled by MyOrder SDK. Maybe Phase 2?
+- TODO
+
++ Parameters
+    + email (optional, string, `test@kalapun.com`) ... String indicating the user email
+
++ Response 200
+
+## POST /auth/password?{oldPassword}{newPassword}
+Change password
 
 + Parameters
     + oldPassword (required, string, `Q1w2e3`) ... String indicating the old user password
@@ -460,7 +468,7 @@ Cart calls could potentially be delayed to Phase 2. Current app stores cart loca
 ## GET /cart?{includeProducts}
 Retrieve the current user shopping cart. A user can be anonymous but requires a session token
 
-- No call exists in MyOrder at this moment. How to implement it?
+- TODO
 
 + Parameters
     + includeProducts (optional, boolean, `true`) ... Bool indicating whether the returned order should include the products in the items
@@ -472,7 +480,7 @@ Retrieve the current user shopping cart. A user can be anonymous but requires a 
 
 Deletes the shopping cart and creates a new one from scratch
 
-- No call exists in MyOrder at this moment. How to implement it?
+- TODO
 
 + Response 200 (application/json)
     [Order][]
@@ -481,7 +489,7 @@ Deletes the shopping cart and creates a new one from scratch
 ## POST /cart/{productId}?{skuId}{quantity}
 Adds a new product to the shopping cart
 
-- No call exists in MyOrder at this moment. How to implement it?
+- TODO
 
 + Parameters
     + productId (required, number, `1`) ... Number indicating the product to be added.
@@ -494,7 +502,7 @@ Adds a new product to the shopping cart
 ## PUT /cart/{itemId}?{quantity}
 Updates the quantity for a shopping cart item
 
-- No call exists in MyOrder at this moment. How to implement it?
+- TODO
 
 + Parameters
     + itemId (required, number, `1`) ... Number indicating the order item to be updated.
@@ -506,7 +514,7 @@ Updates the quantity for a shopping cart item
 ## DELETE /cart/{itemId}
 Deletes an item from the shopping cart
 
-- No call exists in MyOrder at this moment. How to implement it?
+- TODO
 
 + Parameters
     + itemId (required, number, `1`) ... Number indicating the order item to be deleted.
@@ -517,7 +525,7 @@ Deletes an item from the shopping cart
 ## Cart Checkout [/cart/checkout]
 Makes a checkout of the shopping cart
 
-- No call exists in MyOrder at this moment. How to implement it?
+- TODO
 
 + Response 200 (application/json)
     [Order][]
@@ -531,18 +539,16 @@ Instead of providing the full cart funtionality, we could keep it locally and ju
 Confirms a checkout of a local cart
 
 - This request needs to be reviewed. It will take a purchased order with the payment info and confirm it. The order info could be taken from the user purchase history instead of passing all information again
-- Implement it with command 51 for generic merchants, and 1111 and 1112 for ThuisAfgehaald
 
 + Response 200
 
 
 # Group Orders
-Order calls could potentially be delayed to Phase 2. Most of them are already implemented in MyOrder SDK.
 
 ## GET /orders?{includeItems}{includeProducts}{fromDate}{toDate}
 Retrieve user's orders. Requieres login.
 
-- Currently provided by the MyOrderSDK. Probably delayed to Phase 2 of BL integration
+- TODO
 
 + Parameters
     + includeItems (optional, boolean, `true`) ... Bool indicating whether the orders should include the items. Defaults to true.
@@ -557,7 +563,7 @@ Retrieve user's orders. Requieres login.
 ## GET /order/{id}?{includeProducts}
 Retrieve an order detail
 
-- Currently provided by the MyOrderSDK. Probably delayed to Phase 2 of BL integration
+- TODO
 
 + Parameters
     + id (required, number, `1`) ... Number with the order `id` to fetch.
@@ -567,28 +573,16 @@ Retrieve an order detail
     [Order][]
 
 
+# Group ShoppingList
+The following APIs are in discussion:
 
+- CRUD List
+- CRUD Items in list
+- CRUD Groups
+- Favourites?
 
-# Group MyOrder SDK APIs
-The following APIs are not in the MyOrder SDK but should be added:
+# Group TODO
+The following APIs are in discussion:
 
-- Autoreloading and Manual reload for MiniTix (903 and 1001)
-- Credit card info (183)
-- Verify Order (55)
-- P2P payment (1081)
-- Slim betalen (1041)
-
-
-# Group Other APIs
-Some other APIs are not added yet to any module:
-
-- User's favorites (77)
-- Merchant news (805)
-- Merchant group (614)
-- Push service (1051)
-- Global configuration: Tickets (272), social (610), api version (65)
-- Passbook (1043, 1044, 1046, 1047)
-- Price Models not considered properly yet
-- White label apps not considered properly yet
 
 
