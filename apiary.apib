@@ -9,13 +9,12 @@ EMTE API is a *REST* based service provinding information fot the EMTE mobile ap
     + Body
 
             {
-                "id": 181901,
+                "customerId": 181901,
                 "email": "test@kalapun.com",
-                "key": "845gh-834ghr-384uh-3847hf",
                 "firstName": "Taras",
                 "lastName": "Kalapun",
                 "emailVerified": false,
-                "profileEdited": false,
+                "userFilledProfile": false,
                 "address": {
                     "city": "Amsterdam",
                     "street": "Barbara",
@@ -24,7 +23,7 @@ EMTE API is a *REST* based service provinding information fot the EMTE mobile ap
                 }
             }
             
-# UserLight [/model/user_light]
+# UserToken [/model/user_token]
 + Model (application/json)
     + Body
 
@@ -199,7 +198,7 @@ If no email/password provided then an Anonymous session will be created
     + password (optional, string, `Q1w2e3`) ... String indicating the user password
     
 + Response 200 (application/json)
-    [UserLight][]
+    [UserToken][]
 
 ## GET /auth/logout
 Logs the user out
