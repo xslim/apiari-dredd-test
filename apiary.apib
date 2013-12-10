@@ -210,13 +210,20 @@ Logs the user out
 + Response 200
 
 
-## POST /auth/user
+## User [/auth/user]
+### Update the user [POST]
 Updates the user information
 
 + Request (application/x-www-form-urlencoded)
     + Body
     
             firstName=Taras&lastName=Kalapun&genderId=1&countryCode=NL&street=Barbara+Strozzilaan&houseNumber=300&city=Amsterdam&postCode=1083HN&mobilePhone=%2B31621695865&birthday=1985-06-02&familyStatus=1
+
++ Response 200 (application/json)
+    [User][]
+
+
+### Retrieve a User [GET]
 
 + Response 200 (application/json)
     [User][]
